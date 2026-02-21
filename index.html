@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>好评文案</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+  }
+  .box {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 300px;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #07c160;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <div id="text" style="font-size:18px;"></div>
+  <button onclick="copyText()">复制文案</button>
+</div>
+
+<script>
+const texts = [
+  "今天也要加油！",
+  "祝你好运连连 🍀",
+  "愿你拥有好心情",
+  "新的机会正在靠近",
+  "保持热爱，奔赴山海"
+];
+
+const randomText = texts[Math.floor(Math.random() * texts.length)];
+document.getElementById("text").innerText = randomText;
+
+function copyText() {
+  navigator.clipboard.writeText(randomText);
+  alert("已复制！");
+}
+</script>
+
+</body>
+</html>
